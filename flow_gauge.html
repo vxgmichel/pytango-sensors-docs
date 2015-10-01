@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FlowGauge Device Documentation &mdash; tangods-sensors  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="tangods-sensors  documentation" href="index.html" />
+    <link rel="next" title="VacuumGauge Device Documentation" href="vacuum_gauge.html" />
+    <link rel="prev" title="FlowSwitch Device Documentation" href="flow_switch.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-sensors"></span><div class="section" id="flowgauge-device-documentation">
+<h1>FlowGauge Device Documentation<a class="headerlink" href="#flowgauge-device-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sensors.FlowGauge">
+<em class="property">class </em><code class="descclassname">sensors.</code><code class="descname">FlowGauge</code><a class="headerlink" href="#sensors.FlowGauge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tango Device for a flow gauge.</p>
+<dl class="docutils">
+<dt>Device states description:</dt>
+<dd><ul class="first last simple">
+<li><strong>DevState.ON</strong>: equipment ok</li>
+<li><strong>DevState.DISABLED</strong>: equipment disabled</li>
+<li><strong>DevState.ALARM</strong>: equipment interlocked</li>
+<li><strong>DevState.FAULT</strong>: communication error</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="device-properties">
+<h2>Device properties<a class="headerlink" href="#device-properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="sensors.FlowGauge.ByPassedTag">
+<code class="descclassname">FlowGauge.</code><code class="descname">ByPassedTag</code><a class="headerlink" href="#sensors.FlowGauge.ByPassedTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as ByPassed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.Coefficient">
+<code class="descclassname">FlowGauge.</code><code class="descname">Coefficient</code><a class="headerlink" href="#sensors.FlowGauge.Coefficient" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : 0.1</div>
+<div class="line">- dtype : float</div>
+</div>
+</dd>
+</dl>
+<p>Scale factor to convert the raw value to proper unit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.FlowTag">
+<code class="descclassname">FlowGauge.</code><code class="descname">FlowTag</code><a class="headerlink" href="#sensors.FlowGauge.FlowTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as RawFlow.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.InterlockTag">
+<code class="descclassname">FlowGauge.</code><code class="descname">InterlockTag</code><a class="headerlink" href="#sensors.FlowGauge.InterlockTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as Interlock.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.PlcDevice">
+<code class="descclassname">FlowGauge.</code><code class="descname">PlcDevice</code><a class="headerlink" href="#sensors.FlowGauge.PlcDevice" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Proxy device for attributes RawFlow, ByPassed and Interlock.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.PushEvents">
+<code class="descclassname">FlowGauge.</code><code class="descname">PushEvents</code><a class="headerlink" href="#sensors.FlowGauge.PushEvents" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : False</div>
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>Enable change events for all attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.UpdatePeriod">
+<code class="descclassname">FlowGauge.</code><code class="descname">UpdatePeriod</code><a class="headerlink" href="#sensors.FlowGauge.UpdatePeriod" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : 1.0</div>
+<div class="line">- dtype : float</div>
+</div>
+</dd>
+</dl>
+<p>Limit the refresh rate.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="sensors.FlowGauge.ByPassed">
+<code class="descclassname">FlowGauge.</code><code class="descname">ByPassed</code><a class="headerlink" href="#sensors.FlowGauge.ByPassed" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- access : READ_WRITE</div>
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the equipment is by-passed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.Flow">
+<code class="descclassname">FlowGauge.</code><code class="descname">Flow</code><a class="headerlink" href="#sensors.FlowGauge.Flow" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : float</div>
+<div class="line">- unit : L/min</div>
+</div>
+</dd>
+</dl>
+<p>Flow value after conversion.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.Interlock">
+<code class="descclassname">FlowGauge.</code><code class="descname">Interlock</code><a class="headerlink" href="#sensors.FlowGauge.Interlock" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the equipment has generated an interlock.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.RawFlow">
+<code class="descclassname">FlowGauge.</code><code class="descname">RawFlow</code><a class="headerlink" href="#sensors.FlowGauge.RawFlow" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- display_level : EXPERT</div>
+<div class="line">- dtype : float</div>
+</div>
+</dd>
+</dl>
+<p>Flow value as given by the PLC.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="sensors.FlowGauge.GetInfo">
+<code class="descclassname">FlowGauge.</code><code class="descname">GetInfo</code><a class="headerlink" href="#sensors.FlowGauge.GetInfo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Command:</dt>
+<dd><div class="first last line-block">
+<div class="line">- doc_out : Information about polling and events.</div>
+<div class="line">- dtype_out : str</div>
+</div>
+</dd>
+</dl>
+<p>Return information about polling and events.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sensors.FlowGauge.Update">
+<code class="descclassname">FlowGauge.</code><code class="descname">Update</code><a class="headerlink" href="#sensors.FlowGauge.Update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Force the update of polled attributes.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FlowGauge Device Documentation</a><ul>
+<li><a class="reference internal" href="#device-properties">Device properties</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="flow_switch.html" title="previous chapter">FlowSwitch Device Documentation</a></li>
+      <li>Next: <a href="vacuum_gauge.html" title="next chapter">VacuumGauge Device Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/flow_gauge.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, MAX IV.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/flow_gauge.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
